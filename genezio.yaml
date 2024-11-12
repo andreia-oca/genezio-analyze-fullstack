@@ -2,9 +2,9 @@ backend:
     functions:
         - entry: dist/app.js
           handler: handler
-          name: serverless
+          name: function-genezio-typesafe
           path: ./
-          type: aws
+          type: genezio-typesafe
     language:
         name: js
     path: express
