@@ -2,9 +2,9 @@ backend:
     functions:
         - entry: dist/app.js
           handler: handler
-          name: serverless
+          name: function-express
           path: .
-          type: aws
+          type: httpServer
     language:
         name: js
     path: express
