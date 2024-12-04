@@ -15,7 +15,7 @@ backend:
             - npm install
 frontend:
     environment:
-        VITE_API_URL_SERVERLESS: ${{ backend.functions.serverless.url }}
+        VITE_API_URL_FUNCTION_EXPRESS: ${{ backend.functions.function-express.url }}
     path: client
     publish: dist
     scripts:
