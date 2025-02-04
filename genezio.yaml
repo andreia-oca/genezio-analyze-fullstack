@@ -22,7 +22,7 @@ frontend:
         build:
             - npm run build
         deploy:
-            - poop
+            - npm install
     subdomain: aquamarine-retired-platypus
 name: aquamarine-retired-platypus
 region: us-east-1
