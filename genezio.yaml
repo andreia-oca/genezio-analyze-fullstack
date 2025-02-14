@@ -1,29 +1,31 @@
+name: genezio-analyze-fullstack-ts
+region: us-east-1
+yamlVersion: 2
 backend:
+    path: express
     functions:
         - entry: dist/app.js
           handler: handler
-          name: function-express
+          name: express
           path: .
           type: httpServer
     language:
-        name: js
-    path: express
+        name: ts
+        runtime: nodejs20.x
     scripts:
         deploy:
             - npm install
+            - npm run build
         local:
             - npm install
+            - npm run build
 frontend:
-    environment:
-        VITE_API_URL_FUNCTION_EXPRESS: ${{ backend.functions.function-express.url }}
     path: client
     publish: dist
+    environment:
+        VITE_API_URL_FUNCTION_EXPRESS: ${{ backend.functions.express.url }}
     scripts:
         build:
             - npm run build
         deploy:
             - npm install
-    subdomain: aquamarine-retired-platypus
-name: aquamarine-retired-platypus
-region: us-east-1
-yamlVersion: 2
